@@ -5,7 +5,7 @@ const outputMatrix = document.getElementById("output-matrix");
 
 
 function showError(message) {
-    outputMatrix.innerHTML = `<strong class="text-danger">Error: ${message}</strong>`;
+    outputMatrix.innerHTML = `<strong class="text-danger">Error: ' + message + '</strong>`;
 }
 
 
@@ -68,10 +68,8 @@ function calculateGradePayload() {
     }
 
   
-    outputMatrix.innerHTML = `
-        <h5>Weighted Score: <strong>${displayScore}%</strong></h5>
-        <h1 class="display-5 ${colorClass} font-weight-bold">${letterGrade}</h1>
-    `;
+   outputMatrix.innerHTML ='<h5>Weighted Score: <strong>' + displayScore + '%</strong></h5>' +
+                          '<h1 class="display-5 ' + colorClass + ' font-weight-bold">' + letterGrade + '</h1>';    
 }
 
 
