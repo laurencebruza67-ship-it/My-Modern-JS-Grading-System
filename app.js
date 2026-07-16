@@ -5,7 +5,7 @@ const outputMatrix = document.getElementById("output-matrix");
 
 
 function showError(message) {
-    outputMatrix.innerHTML = `<strong class="text-danger">Error: ' + message + '</strong>`;
+    outputMatrix.innerHTML = '<strong class="text-danger"><h1>INVALID!</h1> ' + message + '</strong>';
 }
 
 
@@ -43,6 +43,7 @@ function calculateGradePayload() {
 
     
     const finalWeightedScore = (midtermScore * 0.45) + (finalsScore * 0.55);
+    console.log(finalWeightedScore);
 
    
     const displayScore = Math.round(finalWeightedScore * 100) / 100;
@@ -50,7 +51,7 @@ function calculateGradePayload() {
     let letterGrade = "";
     let colorClass = "text-success"; 
 
-    if (finalWeightedScore <= 74) {
+   if (finalWeightedScore <= 74) {
         letterGrade = "Failed";
         colorClass = "text-danger";
     } else if (finalWeightedScore <= 80) {
@@ -63,7 +64,7 @@ function calculateGradePayload() {
         letterGrade = "B";
     } else if (finalWeightedScore <= 99) {
         letterGrade = "A";
-    } else if (finalWeightedScore === 100) {
+    } else {
         letterGrade = "Perfect A+";
     }
 
